@@ -33,7 +33,10 @@ class App extends Component {
     return (
       <Container>
         <Section title="Please leave feedback">
-          <FeedbackButton onClick={this.onLeaveFeedback} options={this.state} />
+          <FeedbackButton
+            onLeaveFeedback={this.onLeaveFeedback}
+            options={this.state}
+          />
         </Section>
         <Section title="Statistics">
           <Statistics

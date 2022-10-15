@@ -1,16 +1,17 @@
-import PropTypes, { func } from 'prop-types';
+import PropTypes from 'prop-types';
 import { TbCoffee } from 'react-icons/tb';
 import { Button, ButtonContainer, Icon } from './FeedbackButton.styled';
 
-const FeedbackButton = ({ onClick, options }) => {
+const FeedbackButton = ({ onLeaveFeedback, options }) => {
   const buttons = Object.keys(options);
   return (
     <ButtonContainer>
       {buttons.map(btn => (
         <Button
           key={btn}
+          type="button"
           onClick={() => {
-            onClick(btn);
+            onLeaveFeedback(btn);
           }}
         >
           {btn[0].toUpperCase() + btn.slice(1)}
